@@ -1,3 +1,4 @@
+import 'package:blogfrontend/services/blogservices.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -24,7 +25,14 @@ class _RegisterPageState extends State<RegisterPage> {
     print("Pincode"+pincode.text);
     print("Emailid"+emailid.text);
     print("Password"+password.text);
-
+    final response=BlogApiService().sendData(name.text, age.text, mobileno.text, address.text, pincode.text, emailid.text, password.text);
+    // if(response['status']=="success")
+    // {
+    //   print("Successfully Added");
+    // }
+    // else{
+    //   print("Error");
+    // }
   }
   @override
   Widget build(BuildContext context) {
