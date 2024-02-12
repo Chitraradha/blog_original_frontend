@@ -10,10 +10,10 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   TextEditingController email=new TextEditingController();
   TextEditingController pass=new TextEditingController();
-  void BolgValuePage()
+  void BlogValuePage()
   {
-    print(email);
-    print(pass);
+    print(email.text);
+    print(pass.text);
   }
   @override
   Widget build(BuildContext context) {
