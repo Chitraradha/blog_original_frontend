@@ -8,6 +8,13 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  TextEditingController email=new TextEditingController();
+  TextEditingController pass=new TextEditingController();
+  void BolgValuePage()
+  {
+    print(email);
+    print(pass);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +29,7 @@ class _MenuPageState extends State<MenuPage> {
         child: Column(
           children: [
             TextField(
+              controller: email,
               decoration: InputDecoration(
                 labelText: "EmailID",
                 border: OutlineInputBorder()
@@ -29,6 +37,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: pass,
               decoration: InputDecoration(
                   labelText: "Password",
                   border: OutlineInputBorder()
@@ -43,7 +52,7 @@ class _MenuPageState extends State<MenuPage> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero
                         )),
-                    onPressed: (){}, child: Text("Sign In"))),
+                    onPressed: BlogValuePage, child: Text("log In"))),
             SizedBox(height: 20,),
             SizedBox(
                 width: 200,
@@ -55,7 +64,7 @@ class _MenuPageState extends State<MenuPage> {
                         )),
                     onPressed: (){
 
-                    }, child: Text("Register")))
+                    }, child: Text("New user Click here")))
           ],
         ),
       ),
