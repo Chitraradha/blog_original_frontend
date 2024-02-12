@@ -1,3 +1,4 @@
+import 'package:blogfrontend/Pages/regiterpage.dart';
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatefulWidget {
@@ -63,7 +64,9 @@ class _MenuPageState extends State<MenuPage> {
                             borderRadius: BorderRadius.zero
                         )),
                     onPressed: (){
-
+                      Navigator.push(context,MaterialPageRoute(builder:
+                      (context)=>RegisterPage()
+                      ));
                     }, child: Text("New user Click here")))
           ],
         ),
