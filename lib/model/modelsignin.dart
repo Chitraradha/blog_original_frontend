@@ -1,38 +1,33 @@
 // To parse this JSON data, do
 //
-//     final blog = blogFromJson(jsonString);
+//     final post = postFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Blog> blogFromJson(String str) => List<Blog>.from(json.decode(str).map((x) => Blog.fromJson(x)));
+Post postFromJson(String str) => Post.fromJson(json.decode(str));
 
-String blogToJson(List<Blog> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String postToJson(Post data) => json.encode(data.toJson());
 
-class Blog {
-  String id;
-  String? name;
-  String? age;
-  String? mobileno;
-  String? address;
-  String? pincode;
+class Post {
+  String name;
+  String age;
+  String mobileno;
+  String address;
+  String pincode;
   String emailid;
   String password;
-  int v;
 
-  Blog({
-    required this.id,
-    this.name,
-    this.age,
-    this.mobileno,
-    this.address,
-    this.pincode,
+  Post({
+    required this.name,
+    required this.age,
+    required this.mobileno,
+    required this.address,
+    required this.pincode,
     required this.emailid,
     required this.password,
-    required this.v,
   });
 
-  factory Blog.fromJson(Map<String, dynamic> json) => Blog(
-    id: json["_id"],
+  factory Post.fromJson(Map<String, dynamic> json) => Post(
     name: json["Name"],
     age: json["age"],
     mobileno: json["mobileno"],
@@ -40,11 +35,9 @@ class Blog {
     pincode: json["pincode"],
     emailid: json["Emailid"],
     password: json["password"],
-    v: json["__v"],
   );
 
   Map<String, dynamic> toJson() => {
-    "_id": id,
     "Name": name,
     "age": age,
     "mobileno": mobileno,
@@ -52,6 +45,5 @@ class Blog {
     "pincode": pincode,
     "Emailid": emailid,
     "password": password,
-    "__v": v,
   };
 }
